@@ -1,27 +1,26 @@
-// Parent Class Employee
+// Practice 03 - Employee Class and Inheritance
+// Alfredo Frontera
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
 #include <string>
 
 class Employee {
-// Attributes
 protected:
     std::string name;
     int id;
-    std::string type; // "Hourly" or "Salaried"
+    std::string type;
 
-// Methods
 public:
-	// TODO: Constructor
+    Employee(const std::string& name, int id, const std::string& type, 
+             double payPerHour = 0, double workedHours = 0, double yearlyPayment = 0);
 
     virtual ~Employee() {}
 
-    // Virtual function to calculate payment
     virtual double calculatePay() const = 0;
 
-    // TODO: Getters
+    std::string getType() const;
+    std::string getName() const;
 };
 
 #endif
-
